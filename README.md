@@ -37,18 +37,10 @@ landing-page/
 
 ---
 
-## 🛠️ Getting Started
-Follow these simple steps to get a local copy of the project up and running.
-
-Prerequisites
-Ensure you have Node.js (v16 or higher recommended) and npm installed on your machine.
-
-Download Node.js
----
-
 🔧 Technologies Used
 React - A JavaScript library for building user interfaces.
 
 Vite - Next-generation frontend tooling for fast builds.
 
 Tailwind CSS - A utility-first CSS framework for rapid styling.
+---
