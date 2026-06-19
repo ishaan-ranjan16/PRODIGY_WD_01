@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Sora:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base resets ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #faf8f3;
+  color: #1a1a18;
+  font-family: 'Sora', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #f2ede3; }
+::-webkit-scrollbar-thumb { background: #e8501a; border-radius: 4px; }
+
+/* ── Noise texture overlay (subtle grain on hero) ── */
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Dot grid pattern ── */
+.dot-grid {
+  background-image: radial-gradient(circle, #c5bfb0 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+@layer utilities {
+  .animate-fadeUp      { animation: fadeUp 0.8s ease both; }
+  .animate-float       { animation: float 7s ease-in-out infinite; }
+  .animate-scrollLine  { animation: scrollLine 2s linear infinite; }
+  .animate-spinSlow    { animation: spinSlow 22s linear infinite; }
+  .animate-spinRev     { animation: spinRev 15s linear infinite reverse; }
+  .animate-spinFast    { animation: spinFast 9s linear infinite; }
+}
